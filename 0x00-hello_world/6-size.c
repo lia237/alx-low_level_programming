@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/** main - print the size of the various types in bytes
+/**
+ * main - print the size of the various types in bytes
  * using the sizeof operator
  * Return: indicate a successful program execution by
  * returning 0
