@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
+/**
  * main - the main function is the entry point of the program
  *
  * Return: the return statement is used to indicate that
