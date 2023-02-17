@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+/*
+ * main - the main function is the entry point of the program
+ *
+ * Return: the return statement is used to indicate that
+ * the program has completed successfully
+ */
 int main(void)
 {
-	/*
-	 * main - the main function is the entry point of the program
-	 * Return: the return statement is used to indicate that
-	 * the program has completed successfully
-	 */
 	int n;
 
 	srand(time(NULL));
