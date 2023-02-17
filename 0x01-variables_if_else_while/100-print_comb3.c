@@ -15,6 +15,7 @@ int main(void)
 	i2 = 0;
 	while (i1 <= 8)
 	{
+		i2 = i1 + 1;
 		while (i2 <= 9)
 		{
 			putchar((i1 % 10) + '0');
@@ -25,7 +26,6 @@ int main(void)
 			putchar(' ');
 			i2++;
 		}
-		i2 = 0;
 		i1++;
 	}
 	putchar('\n');
