@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -10,6 +11,7 @@ int main(void)
 	int	a;
 	int	b;
 	int	c;
+	int	largest;
 
 	a = 69;
 	b = -8;
