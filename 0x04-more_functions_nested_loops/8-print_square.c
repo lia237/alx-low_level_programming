@@ -18,11 +18,11 @@ void print_square(int size)
 	else
 	{
 		i = 0;
-		while (i < n)
+		while (i < size)
 		{
 			_putchar('#');
 			sq = 0;
-			while (sq < i)
+			while (sq < size)
 			{
 				_putchar('#');
 				sq++;
