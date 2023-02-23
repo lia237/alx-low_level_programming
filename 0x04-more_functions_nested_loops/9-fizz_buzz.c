@@ -31,7 +31,7 @@ int main(void)
 		{
 			printf("%s ", bu);
 		}
-		else if (i % 15 == 0)
+		else if ((i % 3 == 0) && (i % 5 == 0))
 		{
 			printf("%s ", fb);
 		}
