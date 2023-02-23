@@ -25,19 +25,19 @@ int main(void)
 		}
 		else if (i % 3 == 0)
 		{
-			printf("%s", fi);
+			printf("%s ", fi);
 		}
 		else if (i % 5 == 0)
 		{
-			printf("%s", bu);
+			printf("%s ", bu);
 		}
 		else if (i % 15 == 0)
 		{
-			printf("%s", fb);
+			printf("%s ", fb);
 		}
 		else
 		{
-			printf("%d", i);
+			printf("%d ", i);
 		}
 		i++;
 	}
