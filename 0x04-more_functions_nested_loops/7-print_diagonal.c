@@ -9,6 +9,7 @@
 void print_diagonal(int n)
 {
 	int     i;
+	int	sp;
 
 	if (n <= 0)
 	{
