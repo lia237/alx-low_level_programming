@@ -19,9 +19,7 @@ int	_atoi(char *s)
 	result = 0;
 	while (s[i])
 	{
-		if (s[i] == -2147483648)
-			return (-2147483648);
-		else if (s[i] == '-')
+		if (s[i] == '-')
 			sign *= -1;
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -31,5 +29,7 @@ int	_atoi(char *s)
 		}
 		i++;
 	}
+	if (sign < 0)
+		return (INT_MIN);
 	return (result * sign);
 }
