@@ -29,7 +29,5 @@ int	_atoi(char *s)
 		}
 		i++;
 	}
-	if (sign < 0)
-		return (INT_MIN);
 	return (result * sign);
 }
