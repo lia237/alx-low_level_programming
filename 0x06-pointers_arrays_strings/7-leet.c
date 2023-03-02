@@ -19,7 +19,7 @@ char *leet(char *s)
 	while (s[i])
 	{
 		j = 0;
-		while (in[i])
+		while (in[j])
 		{
 			if (s[i] == in[j])
 			{
@@ -29,4 +29,5 @@ char *leet(char *s)
 		}
 		i++;
 	}
+	return (s);
 }
