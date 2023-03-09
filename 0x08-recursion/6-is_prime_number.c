@@ -14,7 +14,7 @@ int helper(int x, int y)
 		return (1);
 	else if (x % y)
 		return (0);
-	return (helper(x, y + 1);
+	return (helper(x, y + 1));
 }
 
 /**
