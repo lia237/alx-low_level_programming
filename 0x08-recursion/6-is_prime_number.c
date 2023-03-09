@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prime2 - Makes possible to evaluate from 1 to n
+ * helper - Makes possible to evaluate from 1 to n
  * @x: same number as n
  * @y: number that iterates from 1 to n
  *
