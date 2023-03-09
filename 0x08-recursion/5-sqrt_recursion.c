@@ -8,7 +8,7 @@
  * Return: evaluate sqrt
  */
 
-int helper(int a, int y)
+int helper(int x, int y)
 {
 	if (y * y == x)
 	{
