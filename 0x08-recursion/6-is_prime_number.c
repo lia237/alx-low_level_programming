@@ -12,7 +12,7 @@ int helper(int x, int y)
 {
 	if (x == y)
 		return (1);
-	else if (x % y)
+	else if (x % y == 0)
 		return (0);
 	return (helper(x, y + 1));
 }
