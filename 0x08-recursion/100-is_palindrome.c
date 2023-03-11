@@ -20,6 +20,12 @@ int _strlen(char *s)
 	return (i);
 }
 
+/**
+ * is_palindrome - check the code for Holberton School students.
+ * @s: String for checking
+ * Return: 1 if palindrome, 0 otherwise
+ */
+
 int is_palindrome(char *s)
 {
 	int	len;
