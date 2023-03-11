@@ -21,7 +21,29 @@ int _strlen(char *s)
 }
 
 /**
- * is_palindrome - check the code for Holberton School students.
+ * is_palindrome - checks if a string is a palindrome
+ * @s: String for checking
+ * @start: the starting index of the substring to check
+ * @end: the ending index of the substring to check
+ *
+ * Return: 1 if palindrome, 0 otherwise
+*/
+int _helper(char *s, int start, int end)
+{
+	if (start >= end)
+	{
+		return (1);
+	}
+	else if (s[start] != s[end])
+	{
+		return (0);
+	}
+	return (_helper(s, start + 1, end - 1));
+}
+
+/**
+ * is_palindrome - Write a function that returns 1 if a string
+ * is a palindrome and 0 if not.
  * @s: String for checking
  * Return: 1 if palindrome, 0 otherwise
  */
@@ -29,18 +51,7 @@ int _strlen(char *s)
 int is_palindrome(char *s)
 {
 	int	len;
-	int	i;
 
 	len = _strlen(s);
-	i = 0;
-	while (i < len)
-	{
-		if (s[i] != s[len - 1 - i])
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-
+	return (_helper(s, 0, len - 1));
 }
