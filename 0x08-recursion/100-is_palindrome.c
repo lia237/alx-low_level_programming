@@ -21,7 +21,7 @@ int _strlen(char *s)
 }
 
 /**
- * is_palindrome - checks if a string is a palindrome
+ * _helper - checks if a string is a palindrome
  * @s: String for checking
  * @start: the starting index of the substring to check
  * @end: the ending index of the substring to check
