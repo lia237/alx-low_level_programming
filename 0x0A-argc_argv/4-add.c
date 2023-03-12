@@ -14,6 +14,11 @@ int main(int argc, char **argv)
 	int	i;
 	int	res;
 
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
 	i = 1;
 	res = 0;
 	while (i < argc)
