@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	int	i;
 	int	res;
 
-	if (argc == 1)
+	if (argc < 1)
 	{
 		printf("0\n");
 		return (0);
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	res = 0;
 	while (i < argc)
 	{
-		if (atoi(argv[i]) == 0 && argv[i][0] != '0')
+		if (!atoi(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
