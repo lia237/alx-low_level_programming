@@ -16,10 +16,10 @@ int main(int argc, char **argv)
 
 	i = 1;
 	res = 0;
-	if (i < argc)
+	/*if (i < argc)
 	{
 		printf("0\n");
-	}
+	}*/
 	while (i < argc)
 	{
 		if (atoi(argv[i]) == 0 && argv[i][0] != '0')
