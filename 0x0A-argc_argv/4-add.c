@@ -16,9 +16,8 @@ int main(int argc, char **argv)
 	int	j;
 
 	res = 0;
-	if (argc == 1)
+	if (argc < 1)
 	{
-		printf("0\n");
 		return (0);
 	}
 	i = 1;
@@ -27,7 +26,7 @@ int main(int argc, char **argv)
 		j = 0:
 		while (argv[i][j])
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			if (argv[i][j] < '0' && argv[i][j] > '9')
 			{
 				printf("Error\n");
 				return (1);
