@@ -14,13 +14,12 @@ int main(int argc, char **argv)
 	int	i;
 	int	res;
 
+	res = 0;
 	if (argc < 1)
 	{
-		printf("0\n");
 		return (0);
 	}
 	i = 1;
-	res = 0;
 	while (i < argc)
 	{
 		if (!atoi(argv[i]))
