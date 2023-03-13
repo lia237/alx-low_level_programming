@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -Wall -Wextra -Werror -c *.c
+gcc -c *.c
 ar -rc libmy.a *.o
