@@ -35,7 +35,7 @@ char *_strdup(char *str)
 	char	*copy;
 
 	len = _strlen(str);
-	if (str == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
