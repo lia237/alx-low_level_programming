@@ -10,6 +10,13 @@
  * Return: address of the newly allocated memory
  */
 
+/**
+ * _strlen -  function that returns the length of a string.
+ * @s: char type pointer
+ *
+ * Return: string
+ */
+
 int _strlen(char *s)
 {
 	int	i;
