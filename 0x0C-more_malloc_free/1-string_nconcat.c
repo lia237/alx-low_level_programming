@@ -19,6 +19,7 @@ int _strlen(char *s)
 	}
 	return (i);
 }
+#include <stdio.h>
 
 /**
  * string_nconcat - concatenates 2 strings
@@ -42,7 +43,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		l2 = _strlen(s2);
 	else
 		l2 = 0;
-	if (n >= l2)
+	if (l2 < n)
 		n = l2;
 	concat = malloc(sizeof(char) * (l1 + n + 1));
 	if (!concat)
@@ -54,7 +55,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 	j = 0;
-	while (j < l2)
+	while (j < n)
 	{
 		concat[i + j] = s2[j];
 		j++;
