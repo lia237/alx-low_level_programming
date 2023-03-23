@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
  * sum_them_all - return the sum of all the arguments.
@@ -15,7 +16,7 @@ int sum_them_all(const unsigned int n, ...)
 
 	if (n = 0)
 		return (0);
-sh: 1: q: not found
+	sum = 0;
 	va_list args;
 	va_start(args, n);
 	i = 0;
