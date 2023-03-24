@@ -4,52 +4,79 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - print all argument that match with format.
- * @format: type to print out.
- * @...: arguments to print.
- * Return: Nothing
+ * print_char - prints a char
+ * @ap: va_list with the char to print
  */
+void print_char(va_list ap)
+{
+	printf("%c", va_arg(ap, int));
+}
+
+/**
+ * print_integer - prints an integer
+ * @ap: va_list with the integer to print
+ */
+void print_integer(va_list ap)
+{
+	int n;
+	n = va_arg(ap, int);
+	printf("%d", n);
+}
+
+/**
+ * print_float - prints a float
+ * @ap: va_list with the float to print
+ */
+void print_float(va_list ap)
+{
+	double d; 
+	d = va_arg(ap, double);
+	printf("%f", d);
+}
+
+/**
+ * print_string - prints a string
+ * @ap: va_list with the string to print
+ */
+void print_string(va_list ap)
+{
+	char *s;
+	s = va_arg(ap, char *);
+	if (s == NULL)
+		printf("(nil)");
+	else
+		printf("%s", s);
+}
 
 void print_all(const char * const format, ...)
 {
-	va_list	args;
-	const char	*p;
-	char	c;
-	char	*s;
-	int	i;
-	float	f;
-
-	va_start(args, format);
-	p = format;
-	while (*p)
+	va_list ap;
+	int i = 0, j;
+	char *separator = "";
+	ptype_t ptypes[] = {
+		{'c', print_char},
+		{'i', print_integer},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
+	};
+	va_start(ap, format);
+	while (format && format[i])
 	{
-		if (*p == 'c')
+		j = 0;
+		while (ptypes[j].type != '\0')
 		{
-			c = (char)va_arg(args, int);
-			printf("%c", c);
+			if (format[i] == ptypes[j].type)
+			{
+				printf("%s", separator);
+				ptypes[j].f(ap);
+				separator = ", ";
+				break;
+			}
+			j++;
 		}
-		else if (*p == 'i')
-		{
-			i = va_arg(args, int);
-			printf("%d", i);
-		}
-		else if (*p == 'f')
-		{
-			f = (float)va_arg(args, double);
-			printf("%f", f);
-		}
-		else if (*p == 's')
-		{
-			s = va_arg(args, char *);
-			if (s == NULL)
-				printf("(nil)");
-			else
-				printf("%s", s);
-		}
-		p++;
-		if (*p)
-			printf(", ");
+		i++;
 	}
-	va_end(args);
 	printf("\n");
+	va_end(ap);
 }
