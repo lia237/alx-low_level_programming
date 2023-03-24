@@ -1,25 +1,26 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <stddef.h>
 #include "variadic_functions.h"
 
 /**
- * integer_print - print integers.
-(* a blank line
-*@args: the list of parameters
-* Description: this function prints integers)?
-(* section header: the header of this function is variadic_functions.h)*
-* Return:no return a void func.
-*/
+ * print_all - print all argument that match with format.
+ * @format: type to print out.
+ * @...: arguments to print.
+ * Return: Nothing
+ */
 
 void print_all(const char * const format, ...)
 {
 	va_list	args;
 	const char	*p;
-	char	c,	*s;
+	char	c;
+	char	*s;
 	int	i;
 	float	f;
 
 	va_start(args, format);
+	p = format;
 	while (*p)
 	{
 		if (*p == 'c')
