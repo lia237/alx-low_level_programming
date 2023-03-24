@@ -3,13 +3,14 @@
 #include <stdio.h>
 
 /**
- * print_strings - print given string
- * @separator: separator to print with if Null don't print any separators.
- * @n: number of arguments to print.
- * @...: string to print.
+ * print_numbers - this function will print the number passes to it.
+ * @separator: element to print as the separator.
+ * @n: number of elements to print.
+ * @...: arguments to print.
  *
- * Return: Nothing.
+ * Return: Nothing
  */
+
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
