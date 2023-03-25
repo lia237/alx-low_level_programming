@@ -11,7 +11,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list	args;
-	const char	*p;
+	char	*p;
 	char	*s;
 
 	if (format == NULL)
@@ -20,15 +20,15 @@ void print_all(const char * const format, ...)
 		return;
 	}
 	va_start(args, format);
-	p = format;
+	p = (char *)format;
 	while (*p)
 	{
 		if (*p == 'c')
-			printf("%c,", (char)va_arg(args, int));
+			printf("%c, ", (char)va_arg(args, int));
 		else if (*p == 'i')
-			printf("%d,", va_arg(args, int));
+			printf("%d, ", va_arg(args, int));
 		else if (*p == 'f')
-			printf("%f,", (float)va_arg(args, double));
+			printf("%f, ", (float)va_arg(args, double));
 		else if (*p == 's')
 		{
 			s = va_arg(args, char *);
