@@ -27,16 +27,19 @@ void print_all(const char * const format, ...)
 		{
 			c = (char)va_arg(args, int);
 			printf("%c", c);
+			printf(", ");
 		}
 		else if (*p == 'i')
 		{
 			i = va_arg(args, int);
 			printf("%d", i);
+			printf(", ");
 		}
 		else if (*p == 'f')
 		{
 			f = (float)va_arg(args, double);
 			printf("%f", f);
+			printf(", ");
 		}
 		else if (*p == 's')
 		{
@@ -45,10 +48,9 @@ void print_all(const char * const format, ...)
 				printf("(nil)");
 			else
 				printf("%s", s);
+			printf(", ");
 		}
 		p++;
-		if (*p)
-			printf(", ");
 	}
 	va_end(args);
 	printf("\n");
