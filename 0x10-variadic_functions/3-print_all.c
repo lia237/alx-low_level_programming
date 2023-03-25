@@ -23,19 +23,26 @@ void print_all(const char * const format, ...)
 	p = (char *)format;
 	while (*p)
 	{
-		if (*p == 'c')
-			printf("%c, ", (char)va_arg(args, int));
-		else if (*p == 'i')
-			printf("%d, ", va_arg(args, int));
-		else if (*p == 'f')
-			printf("%f, ", (float)va_arg(args, double));
-		else if (*p == 's')
+		switch (*p)
 		{
-			s = va_arg(args, char *);
-			if (s == NULL)
-				printf("(nil)");
-			else
-				printf("%s", s);
+			case 'c':
+				printf("%c, ", va_arg(args, int));
+				break;
+			case 'i':
+				printf("%d, ", va_arg(args, int));
+				break;
+			case 'f':
+				printf("%f, ", va_arg(args, double));
+				break;
+			case 's':
+				s = va_arg(args, char *);
+				if (s == NULL)
+					printf("(nil)");
+				else
+					printf("%s", s);
+				break;
+			default:
+				break;
 		}
 		p++;
 	}
