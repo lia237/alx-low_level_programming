@@ -12,10 +12,7 @@ void print_all(const char * const format, ...)
 {
 	va_list	args;
 	const char	*p;
-	char	c;
 	char	*s;
-	int	i;
-	float	f;
 
 	if (format == NULL)
 	{
@@ -27,23 +24,11 @@ void print_all(const char * const format, ...)
 	while (*p)
 	{
 		if (*p == 'c')
-		{
-			c = (char)va_arg(args, int);
-			printf("%c", c);
-			printf(", ");
-		}
+			printf("%c,", (char)va_arg(args, int));
 		else if (*p == 'i')
-		{
-			i = va_arg(args, int);
-			printf("%d", i);
-			printf(", ");
-		}
+			printf("%d,", va_arg(args, int));
 		else if (*p == 'f')
-		{
-			f = (float)va_arg(args, double);
-			printf("%f", f);
-			printf(", ");
-		}
+			printf("%f,", (float)va_arg(args, double));
 		else if (*p == 's')
 		{
 			s = va_arg(args, char *);
