@@ -48,7 +48,6 @@ void print_all(const char * const format, ...)
 				printf("(nil)");
 			else
 				printf("%s", s);
-			printf(", ");
 		}
 		p++;
 	}
