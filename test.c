@@ -24,9 +24,10 @@ int _putchar(char c)
 
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int printed_chars;
-	int i ;
+	va_list	args;
+	int	printed_chars;
+	int	i;
+	int	arg;
 
 	printed_chars = 0;
 	i = 0;
@@ -36,7 +37,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'c')
+			if (format[i] == 'd' || format[i] == 'i')
+			{
+				arg = va_arg(args, int);
+				printed_chars += printf("%d", arg);
+			}
+			else if (format[i] == 'c')
 			{
 				printed_chars += printf("%c", va_arg(args, int));
 			}
