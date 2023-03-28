@@ -16,18 +16,20 @@ int _putchar(char c)
 }
 
 /**
- * _printf - Printf function copy
+ * _pprintf - Printf function copy
  * Description: This is a modified version of printf
  * @format: String to print
  * Return: Number of characters printed
  */
 
-int _printf(const char *format, ...)
+int _pprintf(const char *format, ...)
 {
-	va_list	args;
-	int	printed_chars;
-	int	i;
-	int	arg;
+	va_list args;
+	int printed_chars;
+	char	*s;
+	char	c;
+	int	j;
+	int i ;
 
 	printed_chars = 0;
 	i = 0;
@@ -37,26 +39,28 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'd' || format[i] == 'i')
+			if (format[i] == 'c')
 			{
-				arg = va_arg(args, int);
-				printed_chars += printf("%d", arg);
-			}
-			else if (format[i] == 'c')
-			{
-				printed_chars += printf("%c", va_arg(args, int));
+				c = va_arg(args, int);
+				_putchar(c);
+				printed_chars++;
 			}
 			else if (format[i] == 's')
 			{
-				printed_chars += printf("%s", va_arg(args, char *));
+				s = va_arg(args, char *);
+				j = 0;
+				while (s[j])
+				{
+					_putchar(s[j]);
+					j++;
+					printed_chars++;
+				}
+				printed_chars++;
 			}
 			else if (format[i] == '%')
 			{
-				printed_chars += printf("%%");
-			}
-			else
-			{
-
+				_putchar('%');
+				printed_chars++;
 			}
 		}
 		else
@@ -68,4 +72,12 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return printed_chars;
+}
+int main(void)
+{
+    _pprintf("%c\n", 'A');
+    _pprintf("%s\n", "Hello, world!");
+    _pprintf("%%\n");
+    _pprintf("%\n");
+    return (0);
 }
