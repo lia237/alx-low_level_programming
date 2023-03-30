@@ -6,6 +6,7 @@ int main(int argc, char **argv)
 {
 	int	cents;
 	int	coins;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -21,11 +22,11 @@ int main(int argc, char **argv)
 	coins += cents / 2;
 	cents %= 2;
 	coins += cents / 5;
-        cents %= 5;
+	cents %= 5;
 	coins += cents / 10;
-        cents %= 10;
+	cents %= 10;
 	coins += cents / 25;
-        cents %= 25;
+	cents %= 25;
 	coins += cents;
 	printf("%d\n", coins);
 	return (0);
