@@ -33,8 +33,14 @@ list_t *add_node(list_t **head, const char *str)
 	newn->str = news;
 	newn->len = len;
 	newn->next = *head;
-
+	printf ("%p\n", str);
 	*head = newn;
 	return (newn);
+}
+int main(void)
+{
+    list_t *head;
 
+    head = NULL;
+    add_node(&head, "Alexandro");
 }
