@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* main - program that displays the information contained in the ELF 
+* main - program that displays the information contained in the ELF
 * ||header at the start of an ELF file.
 * @argc: num argument
 * @argv: string argument
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: elf_header elf_filename\n");
-		return 98;
+		return (98);
 	}
 	filename = argv[1];
 	fd = open(filename, O_RDONLY);
@@ -79,5 +79,5 @@ int main(int argc, char *argv[])
 	display_elf_header(&header);
 
 	close(fd);
-	return 0;
+	return (0);
 }
