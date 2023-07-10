@@ -1,8 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include <elf.h>
+#include "main.h"
+
+/**
+* main - program that displays the information contained in the ELF 
+* ||header at the start of an ELF file.
+* @argc: num argument
+* @argv: string argument
+* Return: 0
+*/
 
 void display_error(const char *message)
 {
